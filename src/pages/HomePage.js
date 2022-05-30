@@ -1,0 +1,23 @@
+import About from "../components/About";
+import LoadingSpinner from "../components/common/LoadingSpinner";
+import Contact from "../components/Contact";
+import Hero from "../components/Hero";
+import NavBar from "../components/NavBar";
+import Resume from "../components/Resume";
+import { usePortfolio } from "../store/PortfolioContext";
+
+const HomePage = () => {
+  const { loading } = usePortfolio();
+  if (loading) return <LoadingSpinner />;
+  return (
+    <>
+      <NavBar />
+      <Hero />
+      <Contact />
+      <About />
+      <Resume />
+    </>
+  );
+};
+
+export default HomePage;

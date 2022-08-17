@@ -8,12 +8,14 @@ import { useNavigate } from "react-router-dom";
 const AuthContext = createContext({
   loading: true,
   user: null,
+  message: "",
   onLogin: () => {},
   onLogout: () => {},
 });
 
 export function AuthContextProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [message, setMessage] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -26,10 +28,11 @@ export function AuthContextProvider({ children }) {
         password
       );
       if (result.user) {
-        navigate("/admin/dashboard");
+        setLoading(false);
+        navigate("/dashboard");
       }
     } catch (error) {
-      console.log(error);
+      setMessage(error.message);
     }
   };
 
@@ -43,7 +46,9 @@ export function AuthContextProvider({ children }) {
     });
   }, []);
   return (
-    <AuthContext.Provider value={{ user, loading, onLogin: loginHandler }}>
+    <AuthContext.Provider
+      value={{ user, loading, message, onLogin: loginHandler }}
+    >
       {children}
     </AuthContext.Provider>
   );

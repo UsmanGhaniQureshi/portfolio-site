@@ -2,7 +2,7 @@ import Typewriter from "typewriter-effect";
 
 const TextAnimation = ({ strings }) => {
   return (
-    <span className="mx-1">
+    <div className="font-bold text-xl md:text-2xl">
       <Typewriter
         options={{
           strings,
@@ -10,7 +10,7 @@ const TextAnimation = ({ strings }) => {
           loop: true,
         }}
       />
-    </span>
+    </div>
   );
 };
 

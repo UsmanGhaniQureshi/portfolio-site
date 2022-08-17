@@ -10,13 +10,13 @@ const HomePage = () => {
   const { loading } = usePortfolio();
   if (loading) return <LoadingSpinner />;
   return (
-    <>
+    <div>
       <NavBar />
       <Hero />
       <Contact />
       <About />
       <Resume />
-    </>
+    </div>
   );
 };
 

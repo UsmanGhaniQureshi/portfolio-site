@@ -32,9 +32,9 @@ const Contact = () => {
   };
 
   return (
-    <div id="Contact" className="p-4 w-[98%]  md:w-[90%] lg:w-4/5 mx-auto ">
+    <div id="Contact" className="w-full  md:w-[90%] lg:w-4/5 mx-auto ">
       <div className="text-center p-3 space-y-4">
-        <h1 className="text-3xl font-extrabold font-sans tracking-widest">
+        <h1 className="text-xl md:text-3xl font-extrabold font-sans tracking-wider md:tracking-widest">
           Contact Me
         </h1>
         <p>Keep in Touch With me...</p>
@@ -42,13 +42,13 @@ const Contact = () => {
       </div>
       <div
         data-aos="zoom-in"
-        className=" p-3 bg-slate-700 text-white  rounded-3xl"
+        className="p-8 md:p-5 bg-slate-700 text-white  rounded-3xl"
       >
-        <div className="flex text-2xl md:text-4xl font-bold">
+        <div className="flex text-lg md:text-3xl font-bold">
           Get In Touch With Me <TextAnimation strings={[]} />
         </div>
         <div className="flex flex-col py-3  md:flex-row">
-          <div className="flex flex-col flex-1">
+          <div className="flex flex-col gap-3 flex-1">
             <SocialLinks />
             <p className="tracking-[0.1rem] md:tracking-[0.2rem] lg:tracking-[0.4rem] md:mt-[20%]">
               Send Your Email Here !
@@ -58,11 +58,11 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={submitHandler}
-            className="flex-1 font-bold p-3 md:p-6  text-white  bg-slate-400 rounded-3xl "
+            className="flex-none max-w-sm space-y-3 md:flex-1 md:max-w-full text-xs md:text-base font-bold py-4 px-6 text-white  bg-slate-400 rounded-3xl "
           >
             {message && <p>{message}</p>}
             <input name="to_name" type="hidden" value="Usman Ghani Qureshi" />
-            <div className="form-control">
+            <div className="form-control space-y-1">
               <label htmlFor="name">Name</label>
               <input
                 id="name"
@@ -72,7 +72,7 @@ const Contact = () => {
                 className="border  transition-all p-2 md:p-3 text-black focus:outline focus:outline-orange-500  rounded-xl"
               />
             </div>
-            <div className="form-control">
+            <div className="form-control space-y-1">
               <label htmlFor="email">Email</label>
               <input
                 id="email"
@@ -82,7 +82,7 @@ const Contact = () => {
                 className="border transition-all  p-2 md:p-3 text-black focus:outline focus:outline-orange-500  rounded-xl"
               />
             </div>
-            <div className="form-control">
+            <div className="form-control space-y-1">
               <label htmlFor="message">Your Message</label>
               <textarea
                 name="message"

@@ -17,7 +17,9 @@ const Resume = () => {
   return (
     <div id="Resume" className="p-4 mt-5 w-[90%] mx-auto md:py-20">
       <div className="text-center space-y-2">
-        <h1 className="font-extrabold text-3xl  ">Resume</h1>
+        <h1 className="text-xl md:text-3xl font-extrabold font-sans tracking-wider md:tracking-widest  ">
+          Resume
+        </h1>
         <Divider />
       </div>
       <div className="flex flex-col p-4 lg:flex-row">
@@ -116,10 +118,10 @@ const RecentWork = () => {
     <div className="w-full mx-auto p-2 md:w-[90%] lg:w-[70%]">
       {work.map((w) => (
         <div key={w.id}>
-          <h1 className="text-orange-600 font-extrabold">{w.workedAs}</h1>
+          <h1 className="text-orange-600 text-sm md:text-base font-bold md:font-extrabold">{w.workedAs}</h1>
           <div className="p-2">
-            {w.points.map((point) => (
-              <ListItem text={point} textStyle="text-black" />
+            {w.points.map((point, index) => (
+              <ListItem text={point} key={index} textStyle="text-black" />
             ))}
           </div>
         </div>
@@ -131,7 +133,7 @@ const RecentWork = () => {
 const ProgrammingSkills = () => {
   const { programmingSkills } = usePortfolio();
   return (
-    <div className="w-full mx-auto p-2 md:w-[90%] lg:w-[70%]">
+    <div className=" mx-auto p-2 md:w-[90%] lg:w-[70%]">
       {programmingSkills.map((skill) => (
         <div key={skill.id} className="flex flex-1 m-2  flex-col">
           <ListItem text={skill.language} textStyle="text-black" />
@@ -199,7 +201,7 @@ const ResumeItem = ({ onClick, text, tIndex }) => {
   return (
     <div
       tabIndex={tIndex}
-      className="mr-4 from-[black_50%] p-3 rounded-r-full via-[white_50%] bg-gradient-to-r w-80  transition-all duration-1000 bg-[length:200%_100%]  focus:text-white bg-right-bottom focus:bg-left-bottom"
+      className="mr-4 from-[black_50%] p-3 text-sm md:text-base rounded-r-full via-[white_50%] bg-gradient-to-r w-80  transition-all duration-1000 bg-[length:200%_100%]  focus:text-white bg-right-bottom focus:bg-left-bottom"
       onClick={onClick}
     >
       {text}

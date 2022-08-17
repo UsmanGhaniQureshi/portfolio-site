@@ -11,7 +11,7 @@ const About = () => {
       <div className="text-center space-y-4">
         <h1
           id="About"
-          className="text-3xl font-extrabold font-sans tracking-widest"
+          className="text-xl md:text-3xl font-extrabold font-sans tracking-wider md:tracking-widest"
         >
           About Me
         </h1>
@@ -34,7 +34,7 @@ const About = () => {
         <div className="flex flex-col flex-1 p-2 md:p-6">
           <p className="flex-1 antialiased ">{personalInfo.about}</p>
           <div className="flex-1 space-y-2">
-            <h1 className="font-extrabold text-lg text-orange-600">
+            <h1 className="font-bold md:font-extrabold text-sm md:text-lg text-orange-600">
               Here are few Highlights
             </h1>
             {highlights.map((item) => (

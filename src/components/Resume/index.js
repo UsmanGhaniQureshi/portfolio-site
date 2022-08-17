@@ -100,12 +100,12 @@ const Education = () => {
   return (
     <div className="w-full mx-auto p-2 md:w-[90%] lg:w-[70%]">
       {education.map((item) => (
-        <div key={item.id} className="flex flex-col">
+        <div key={item.id} className="flex mt-2 flex-col">
           <div className="flex items-center justify-between">
             <ListItem text={item.degreeTitle} />
             <Badge text={item.year} />
           </div>
-          <p className="ml-8">{item.institute}</p>
+          <p className="ml-8 text-xs md:text-base">{item.institute}</p>
         </div>
       ))}
     </div>
@@ -118,7 +118,9 @@ const RecentWork = () => {
     <div className="w-full mx-auto p-2 md:w-[90%] lg:w-[70%]">
       {work.map((w) => (
         <div key={w.id}>
-          <h1 className="text-orange-600 text-sm md:text-base font-bold md:font-extrabold">{w.workedAs}</h1>
+          <h1 className="text-orange-600 text-sm md:text-base font-bold md:font-extrabold">
+            {w.workedAs}
+          </h1>
           <div className="p-2">
             {w.points.map((point, index) => (
               <ListItem text={point} key={index} textStyle="text-black" />
@@ -156,7 +158,7 @@ const Projects = () => {
             <ListItem text={project.projectName} />
             <div className="md:ml-10">
               <p>
-                Technology Used :{" "}
+               <span className="font-bold">Technology Used :</span>
                 {project.technologyUsed.map((tech, index) =>
                   index === 0 ? " " + tech : " , " + tech
                 )}
@@ -189,8 +191,8 @@ const Interests = () => {
     <div className="w-full mx-auto p-2 md:w-[90%] lg:w-[70%]">
       {interests.map((interest) => (
         <div key={interest.id}>
-          <h1 className="text-orange-600 font-bold">{interest.interestIn}</h1>
-          <p className="mx-10">{interest.interestDetail}</p>
+          <h1 className="text-orange-600 text-sm md:text-base font-bold">{interest.interestIn}</h1>
+          <p className="md:mx-10 text-sm md:text-base">{interest.interestDetail}</p>
         </div>
       ))}
     </div>
